@@ -1,7 +1,6 @@
 class VolunteersController < ApplicationController
   def index
     @volunteers = Volunteer.all
-    @donors = Donor.all
   end
 
   def show

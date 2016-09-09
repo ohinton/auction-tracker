@@ -1,45 +1,44 @@
 class DonorsController < ApplicationController
-  def new
-    @volunteer = Volunteer.find(params[:volunteer_id])
-    @donor = @volunteer.donors.new
-  end
-
-  def show
-    @stories = Volunteer.all
+  def index
     @donors = Donor.all
   end
 
+  def show
+    @donor = Donor.find(params[:id])
+  end
+
+  def new
+    @donor = Donor.new
+  end
+
   def create
-    @volunteer = Volunteer.find(params[:volunteer_id])
-    @donor = @volunteer.donors.new(donor_params)
+    @donor = Donor.new(donor_params)
     if @donor.save
-      redirect_to volunteer_path(@donor.volunteer)
+      flash[:notice] = "Donor successfully added!"
+      redirect_to donors_path
     else
       render :new
     end
   end
 
   def edit
-    @volunteer = Volunteer.find(params[:volunteer_id])
-    @donor = @volunteer.donors.find(params[:id])
-    @rand = @donor.image
+    @donor = Donor.find(params[:id])
   end
 
   def update
-    @volunteer = Volunteer.find(params[:volunteer_id])
-    @donor = @volunteer.donors.find(params[:id])
-      if @donor.update(donor_params)
-        redirect_to volunteer_path(@donor.volunteer)
-      else
-        render :edit
-      end
+    @donor = Donor.find(params[:id])
+    if @donor.update(donor_params)
+      flash[:notice] = "Donor successfully updated!"
+      redirect_to donors_path
+    else
+      render :edit
     end
+  end
 
   def destroy
-    @volunteer = Volunteer.find(params[:volunteer_id])
     @donor = Donor.find(params[:id])
     @donor.destroy
-    redirect_to volunteer_path(@donor.volunteer)
+    redirect_to donors_path
   end
 
   private

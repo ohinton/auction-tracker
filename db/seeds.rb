@@ -11,3 +11,17 @@ volunteers = Volunteer.create([
   { name: 'Rachael Bermudes', phone: '503-000-0000', email: 'rbermudes@gmail.com', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210' }
 
   ])
+
+  donors = Donor.create([
+
+    { name: 'VooDoo Doughnuts', phone: '503-000-0000', email: 'voodoo@gmail.com', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210' },
+
+    { name: 'Papa Hayden', phone: '503-000-0000', email: 'papahayden@gmail.com', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210' },
+
+    { name: 'Pabst Blue Ribbon', phone: '503-000-0000', email: 'pbr@gmail.com', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210' },
+
+    { name: 'Portland Timbers', phone: '503-000-0000', email: 'timbers@gmail.com', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210' },
+
+    { name: 'Pink Martini', phone: '503-000-0000', email: 'martini@gmail.com', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210' }
+
+    ])

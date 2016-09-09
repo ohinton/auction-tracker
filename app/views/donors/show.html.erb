@@ -1,0 +1,15 @@
+<h1><%= @donor.name %></h1>
+
+<span><%= link_to "edit", edit_donor_path(@donor), :class => "btn btn-warning btn-xs" %></span>
+<span><%= link_to "delete", donor_path(@donor), :class => "btn btn-danger btn-xs",
+                         :data => {:confirm => "Are you sure you want to delete this donor?",
+                                   :method => "delete"} %></span>
+
+<hr>
+<h4>Contact info:</h4>
+<p><%= @donor.phone %></p>
+<p><%= @donor.email %></p>
+<br>
+<h4>Address info:</h4>
+<p><%= @donor.address %></p>
+<p><%= @donor.city %>, <%= @donor.state %> <%= @donor.zip %> </p>
