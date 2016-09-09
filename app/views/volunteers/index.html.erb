@@ -1,7 +1,10 @@
 <h1>Volunteers</h1>
 
+<%= link_to "Add a new volunteer", new_volunteer_path %>
+
+
 <ul>
   <% @volunteers.each do |volunteer| %>
-    <li><%= volunteer.name %></li>
+    <li><%= link_to volunteer.name, volunteer_path(volunteer) %></li>
   <% end %>
 </ul>
