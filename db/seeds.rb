@@ -1,7 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+volunteers = Volunteer.create([
+
+  { name: 'Meaghan Jones', phone: '503-000-0000', email: 'mjones@gmail.com', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210' },
+
+  { name: 'Maldon Meehan', phone: '503-000-0000', email: 'mmeehan@gmail.com', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210' },
+
+  { name: 'Noah Yasskin', phone: '503-000-0000', email: 'nyasskin@gmail.com', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210' },
+
+  { name: 'Stephanie Gurang', phone: '503-000-0000', email: 'sgurang@gmail.com', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210' },
+
+  { name: 'Rachael Bermudes', phone: '503-000-0000', email: 'rbermudes@gmail.com', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210' }
+
+  ])
