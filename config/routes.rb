@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'volunteers#index'
+  devise_for :users
+  root to: 'users#index'
   resources :volunteers
-  
   resources :donors
 
 end

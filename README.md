@@ -1,6 +1,6 @@
 # 🎆  Reach Your Fundraising Auction Goals 🎆
 
-#### By Olivia Hinton | Date: September 9, 2016
+#### By Olivia Hinton | September 9, 2016
 
 ## Description
 

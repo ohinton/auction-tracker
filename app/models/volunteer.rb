@@ -1,6 +1,6 @@
 class Volunteer < ActiveRecord::Base
-  has_many :donors
-  has_many :updates, :through => :donors
+  has_many :updates
+  has_many :donors, :through => :updates
 
   validates :name, :presence => true
   validates :phone, :presence => true
