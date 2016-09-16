@@ -6,9 +6,9 @@ end
 
 FactoryGirl.define do
   factory(:volunteer) do
-    name('Test Volunteer')
+    first_name('TestFirst')
+    last_name('TestLast')
     phone('503-000-0000')
-    email('test@email.com')
     address('12345 Test Address')
     city('Portland')
     state('OR')

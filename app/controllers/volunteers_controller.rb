@@ -1,4 +1,5 @@
 class VolunteersController < ApplicationController
+
   def index
     @volunteers = Volunteer.all
   end
@@ -14,7 +15,7 @@ class VolunteersController < ApplicationController
   def create
     @volunteer = Volunteer.new(volunteer_params)
     if @volunteer.save
-      flash[:notice] = "Volunteer successfully added!"
+      flash[:notice] = "Your profile details were successfully added!"
       redirect_to volunteers_path
     else
       render :new
@@ -28,7 +29,7 @@ class VolunteersController < ApplicationController
   def update
     @volunteer = Volunteer.find(params[:id])
     if @volunteer.update(volunteer_params)
-      flash[:notice] = "Volunteer successfully updated!"
+      flash[:notice] = "Your profile details were successfully updated!"
       redirect_to volunteers_path
     else
       render :edit
@@ -43,7 +44,7 @@ class VolunteersController < ApplicationController
 
   private
   def volunteer_params
-    params.require(:volunteer).permit(:name, :phone, :email, :address, :city, :state, :zip)
+    params.require(:volunteer).permit(:name, :first_name, :last_name, :phone, :address, :city, :state, :zip, :user_id)
   end
 
 end

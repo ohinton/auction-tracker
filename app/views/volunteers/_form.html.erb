@@ -1,12 +1,12 @@
 <%= render "layouts/errors", :object => @volunteer %>
 
 <%= form_for @volunteer do |f|%>
-  <%= f.label :name %>
-  <%= f.text_field :name, :class => "form-control" %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name, :class => "form-control" %>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name, :class => "form-control" %>
   <%= f.label :phone %>
   <%= f.telephone_field :phone, :class => "form-control" %>
-  <%= f.label :email %>
-  <%= f.email_field :email, :class => "form-control" %>
   <%= f.label :address %>
   <%= f.text_field :address, :class => "form-control" %>
   <%= f.label :city %>
@@ -15,5 +15,6 @@
   <%= f.text_field :state, :class => "form-control" %>
   <%= f.label :zip %>
   <%= f.text_field :zip, :class => "form-control" %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
   <%= f.submit :class => "btn btn-success" %>
 <% end %>

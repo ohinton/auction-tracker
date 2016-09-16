@@ -1,9 +1,3 @@
-<h1>Your volunteers</h1>
+<h1>Welcome to your dashboard!</h1>
 
-<ul>
-  <% @volunteers.each do |volunteer| %>
-    <li><%= link_to volunteer.name, volunteer_path(volunteer) %></li>
-  <% end %>
-</ul>
-
-<%= link_to "Add a new volunteer", new_volunteer_path, :class => "btn btn-success btn-lg" %>
+<h2><%= link_to "Create your profile", new_volunteer_path %><h2>
