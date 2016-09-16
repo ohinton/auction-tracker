@@ -1,4 +1,4 @@
-<h1><%= @volunteer.first_name %></h1>
+<h1><%= @volunteer.first_name %> <%= @volunteer.last_name %></h1>
 
 <span><%= link_to "edit", edit_volunteer_path(@volunteer), :class => "btn btn-warning btn-xs" %></span>
 <span><%= link_to "delete", volunteer_path(@volunteer), :class => "btn btn-danger btn-xs",
@@ -7,7 +7,6 @@
 <hr>
 <h4>Contact info:</h4>
 <p><%= @volunteer.phone %></p>
-<p><%= @volunteer.email %></p>
 <br>
 <h4>Address info:</h4>
 <p><%= @volunteer.address %></p>

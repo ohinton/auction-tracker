@@ -1,11 +1,11 @@
 class VolunteersController < ApplicationController
 
   def index
-    @volunteers = Volunteer.all
+    @volunteer = current_user
   end
 
   def show
-    @volunteer = Volunteer.find(params[:id])
+    @volunteer = Volunteer.where(user_id: params[:id]).first
   end
 
   def new
