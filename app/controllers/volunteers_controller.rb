@@ -1,25 +1,17 @@
 class VolunteersController < ApplicationController
+  before_action :authenticate_user!
 
   def index
-    @volunteer = current_user
-  end
-
-  def show
-    @volunteer = Volunteer.where(user_id: params[:id]).first
+    @user = current_user
+    @volunteer = @user.volunteer
   end
 
   def new
     @volunteer = Volunteer.new
   end
 
-  def create
-    @volunteer = Volunteer.new(volunteer_params)
-    if @volunteer.save
-      flash[:notice] = "Your profile details were successfully added!"
-      redirect_to volunteers_path
-    else
-      render :new
-    end
+  def show
+    @volunteer = Volunteer.where(user_id: params[:id]).first
   end
 
   def edit
