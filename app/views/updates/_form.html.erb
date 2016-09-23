@@ -1,12 +1,16 @@
 <%= render "layouts/errors", :object => @update %>
 
 <%= form_for @update, remote: true, id:"new_update" do |f| %>
-  <%= f.label :date %>
-  <%= f.date_field :date, :class => "form-control" %>
-
-  <%= f.label :note %>
-  <%= f.text_field :note, :class => "form-control" %>
-
+  <div class="row">
+    <div class="form-group col-md-4">
+      <%= f.label :date %>
+      <%= f.date_field :date, :class => "form-control" %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label :note %>
+      <%= f.text_field :note, :class => "form-control" %>
+    </div>
+  </div>
   <%= f.hidden_field :donor_id, :value => @donor.id %>
 
   <%= f.hidden_field :volunteer_id, :value => @volunteer.id %>

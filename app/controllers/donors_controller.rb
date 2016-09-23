@@ -18,7 +18,7 @@ class DonorsController < ApplicationController
     @donor = Donor.new(donor_params)
     if @donor.save
       flash[:notice] = "Donor successfully added!"
-      redirect_to donors_path
+      redirect_to volunteers_path
     else
       render :new
     end
