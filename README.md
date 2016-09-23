@@ -3,7 +3,7 @@
 #### By Olivia Hinton | September 9, 2016
 
 ## Known Bugs
-* To navigate site: log in with email: "test@email.com", password: "password"
+* Don't sign up, log in with email: "test@email.com", password: "password", to access site.
 
 * In User model, I would like to use "after_create :make_volunteer" to create the user-volunteer association when someone signs up.
 
