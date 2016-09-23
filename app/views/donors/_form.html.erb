@@ -1,6 +1,7 @@
 <%= render "layouts/errors", :object => @donor %>
 
 <%= form_for @donor do |f| %>
+  <%= f.hidden_field :volunteer_id, :value => @volunteer.id %>
   <%= f.label :name %>
   <%= f.text_field :name, :class => "form-control" %>
   <%= f.label :phone %>

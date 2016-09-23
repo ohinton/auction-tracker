@@ -1,6 +1,7 @@
 class Donor < ActiveRecord::Base
   has_many :updates
   has_many :volunteers, :through => :updates
+  belongs_to :volunteer
 
   validates :name, :presence => true
   validates :phone, :presence => true

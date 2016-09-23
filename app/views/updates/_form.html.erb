@@ -1,0 +1,15 @@
+<%= render "layouts/errors", :object => @update %>
+
+<%= form_for @update do |f| %>
+  <%= f.label :date %>
+  <%= f.date_field :date, :class => "form-control" %>
+
+  <%= f.label :note %>
+  <%= f.text_field :note, :class => "form-control" %>
+
+  <%= f.hidden_field :donor_id %>
+
+  <%= f.hidden_field :volunteer_id, :value => @user.id %>
+
+  <%= f.submit :class => "btn btn-success"  %>
+<% end %>

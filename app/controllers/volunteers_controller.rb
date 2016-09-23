@@ -11,11 +11,22 @@ class VolunteersController < ApplicationController
   end
 
   def show
-    @volunteer = Volunteer.where(user_id: params[:id]).first
+    @volunteer = Volunteer.find(params[:id])
+    # @volunteer = Volunteer.where(user_id: params[:id]).first
   end
 
   def edit
     @volunteer = Volunteer.find(params[:id])
+  end
+
+  def create
+    @volunteer = Volunteer.new(volunteer_params)
+      if @volunteer.save
+      flash[:notice] = "Volunteer successfully added!"
+      redirect_to volunteers_path
+    else
+      render :new
+    end
   end
 
   def update

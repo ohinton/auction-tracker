@@ -1,4 +1,5 @@
 class DonorsController < ApplicationController
+
   def index
     @donors = Donor.all
   end
@@ -9,6 +10,8 @@ class DonorsController < ApplicationController
 
   def new
     @donor = Donor.new
+    @user = current_user
+    @volunteer = Volunteer.where(user_id: current_user).first
   end
 
   def create
@@ -43,6 +46,6 @@ class DonorsController < ApplicationController
 
   private
   def donor_params
-    params.require(:donor).permit(:name, :phone, :email, :address, :city, :state, :zip)
+    params.require(:donor).permit(:name, :phone, :email, :address, :city, :state, :zip, :volunteer_id)
   end
 end
