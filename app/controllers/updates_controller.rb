@@ -11,6 +11,9 @@ class UpdatesController < ApplicationController
   def new
     @update = Update.new
     @user = current_user
+    @volunteer = Volunteer.where(user_id: current_user).first
+    @donor = Donor.where(volunteer_id: @volunteer.id).last
+
   end
 
   def create
@@ -25,6 +28,6 @@ class UpdatesController < ApplicationController
 
   private
   def update_params
-    params.require(:update).permit(:note, :volunteer_id, :donor_id)
+    params.require(:update).permit(:note, :date, :volunteer_id, :donor_id)
   end
 end
