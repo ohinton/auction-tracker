@@ -10,6 +10,7 @@
       <% @volunteer.donors.each do |donor| %>
         <li><%= link_to donor.name, donor_path(donor) %></li>
         <p><%= donor.phone %> | <%= donor.email %></p>
+        
         <% if donor.updates.any? %>
         <p>Recent updates: </p>
         <ul>

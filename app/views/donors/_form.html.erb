@@ -1,7 +1,7 @@
 <%= render "layouts/errors", :object => @donor %>
 
 <%= form_for @donor do |f| %>
-  <%= f.hidden_field :volunteer_id, :value => @volunteer.id %>
+  <%= f.hidden_field :volunteer_id, :value => @volunteer.id, :id => "donor_volunteer_id" %>
 
   <div class="row">
     <div class="form-group col-md-5">

@@ -20,6 +20,7 @@ end
 
 FactoryGirl.define do
   factory(:donor) do
+    volunteer
     name('Test Donor')
     phone('503-000-0000')
     email('test@email.com')
@@ -32,6 +33,9 @@ end
 
 FactoryGirl.define do
   factory(:update) do
+    volunteer
+    donor
     note('Test note')
+    date ('1/1/2016')
   end
 end
