@@ -1,27 +1,28 @@
-# volunteers = Volunteer.create([
-#
-#   { name: 'Meaghan Jones', phone: '503-000-0000', email: 'mjones@gmail.com', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210' },
-#
-#   { name: 'Maldon Meehan', phone: '503-000-0000', email: 'mmeehan@gmail.com', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210' },
-#
-#   { name: 'Noah Yasskin', phone: '503-000-0000', email: 'nyasskin@gmail.com', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210' },
-#
-#   { name: 'Stephanie Gurang', phone: '503-000-0000', email: 'sgurang@gmail.com', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210' },
-#
-#   { name: 'Rachael Bermudes', phone: '503-000-0000', email: 'rbermudes@gmail.com', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210' }
-#
-#   ])
-#
-#   donors = Donor.create([
-#
-#     { name: 'VooDoo Doughnuts', phone: '503-000-0000', email: 'voodoo@gmail.com', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210' },
-#
-#     { name: 'Papa Hayden', phone: '503-000-0000', email: 'papahayden@gmail.com', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210' },
-#
-#     { name: 'Pabst Blue Ribbon', phone: '503-000-0000', email: 'pbr@gmail.com', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210' },
-#
-#     { name: 'Portland Timbers', phone: '503-000-0000', email: 'timbers@gmail.com', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210' },
-#
-#     { name: 'Pink Martini', phone: '503-000-0000', email: 'martini@gmail.com', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210' }
-#
-#     ])
+user = User.create! email: "test@email.com", password: 'password', password_confirmation: 'password'
+
+volunteer = Volunteer.create! first_name: 'Olivia', last_name: 'Hinton', phone: '503-000-0000', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210', user_id: 1
+
+
+donors = Donor.create([
+
+  { name: 'VooDoo Doughnuts', phone: '503-000-0000', email: 'voodoo@gmail.com', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210', volunteer_id: 1 },
+
+  { name: 'Papa Hayden', phone: '503-000-0000', email: 'papahayden@gmail.com', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210', volunteer_id: 1 },
+
+  { name: 'Pabst Blue Ribbon', phone: '503-000-0000', email: 'pbr@gmail.com', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210', volunteer_id: 1 },
+
+  { name: 'Portland Timbers', phone: '503-000-0000', email: 'timbers@gmail.com', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210', volunteer_id: 1 },
+
+  { name: 'Pink Martini', phone: '503-000-0000', email: 'martini@gmail.com', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210', volunteer_id: 1 }
+
+  ])
+
+  updates = Update.create([
+
+    { note: 'Will donate', date: '1/1/2016', volunteer_id: 1, donor_id: 1 },
+    { note: 'Can not donate', date: '1/1/2016', volunteer_id: 1, donor_id: 2 },
+    { note: 'Might donate', date: '1/1/2016', volunteer_id: 1, donor_id: 3 },
+    { note: 'Will donate', date: '1/1/2016', volunteer_id: 1, donor_id: 4 },
+    { note: 'Can not donate', date: '1/1/2016', volunteer_id: 1, donor_id: 5 },
+
+    ])
