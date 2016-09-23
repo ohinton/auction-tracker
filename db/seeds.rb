@@ -20,9 +20,9 @@ donors = Donor.create([
   updates = Update.create([
 
     { note: 'Will donate', date: '1/1/2016', volunteer_id: 1, donor_id: 1 },
-    { note: 'Can not donate', date: '1/1/2016', volunteer_id: 1, donor_id: 2 },
-    { note: 'Might donate', date: '1/1/2016', volunteer_id: 1, donor_id: 3 },
-    { note: 'Will donate', date: '1/1/2016', volunteer_id: 1, donor_id: 4 },
-    { note: 'Can not donate', date: '1/1/2016', volunteer_id: 1, donor_id: 5 },
+    { note: 'Can not donate', date: '1/10/2016', volunteer_id: 1, donor_id: 2 },
+    { note: 'Might donate', date: '1/15/2016', volunteer_id: 1, donor_id: 3 },
+    { note: 'Will donate', date: '1/17/2016', volunteer_id: 1, donor_id: 4 },
+    { note: 'Can not donate', date: '1/10/2016', volunteer_id: 1, donor_id: 5 },
 
     ])

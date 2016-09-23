@@ -1,6 +1,6 @@
 <%= render "layouts/errors", :object => @update %>
 
-<%= form_for @update do |f| %>
+<%= form_for @update, remote: true, id:"new_update" do |f| %>
   <%= f.label :date %>
   <%= f.date_field :date, :class => "form-control" %>
 

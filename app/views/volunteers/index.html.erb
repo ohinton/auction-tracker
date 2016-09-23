@@ -1,8 +1,6 @@
 <h1>Welcome to your dashboard!</h1>
 
-<p><%= link_to "Create your profile", new_volunteer_path, :class => "btn btn-success btn-lg" %></p>
-
-<p><%= link_to "See your profile", volunteer_path(@volunteer), :class => "btn btn-success btn-lg" %></p>
+<p><%= link_to "Create your profile", new_volunteer_path, :class => "btn btn-success btn-xs" %></p>
 
 <p><%= link_to "Add a new donor", new_donor_path, :class => "btn btn-success btn-lg" %></p>
 
@@ -11,14 +9,15 @@
 <ul>
 <% if @volunteer.donors.any? %>
   <% @volunteer.donors.each do |donor| %>
-  <li><%= link_to donor.name, donor_path(donor) %></li>
+    <li><%= link_to donor.name, donor_path(donor) %> | <span id="donor_update_link_<%= donor.id %>"><%= link_to "Add an update", new_update_path, :class => "btn btn-success btn-xs", remote: true %></span></li>
     <% if donor.updates.any? %>
     <ul>
       <% donor.updates.each do |update| %>
-      <li><%= update.date %> | Note: <%= update.note %> </li>
+        <li><%= update.date %> | Note: <%= update.note %> </li>
       <% end %>
     </ul>
     <% end %>
+  <br>
   <% end %>
   </ul>
 <% end %>

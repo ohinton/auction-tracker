@@ -13,14 +13,16 @@ class UpdatesController < ApplicationController
     @user = current_user
     @volunteer = Volunteer.where(user_id: current_user).first
     @donor = Donor.where(volunteer_id: @volunteer.id).last
-
   end
 
   def create
     @update = Update.new(update_params)
     if @update.save
       flash[:notice] = "Update successfully added!"
-      redirect_to updates_path
+      respond_to do |format|
+        format.html { redirect_to volunteers_path }
+        format.js
+      end
     else
       render :new
     end

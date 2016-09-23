@@ -4,6 +4,7 @@ class VolunteersController < ApplicationController
   def index
     @user = current_user
     @volunteer = @user.volunteer
+    @donors = Donor.all
   end
 
   def new

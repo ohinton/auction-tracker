@@ -9,7 +9,7 @@ I get this error:
 ActiveRecord::RecordNotSaved in Devise::RegistrationsController#create
 Failed to save the new associated volunteer.
 
-I've checked the database and model relationships, and the model specs are passing. Not sure why it won't create a volunteer after a user is created. 
+I've checked the database and model relationships, and the model specs are passing. Not sure why it won't create a volunteer after a user is created.
 
 
 
@@ -21,7 +21,7 @@ Features include:
 * a database of your donors and volunteers, with the ability to assign a volunteer to a donor
 * an admin dashboard to see the current progress toward your fundraising goal
 * a dashboard so volunteers can see which donors they are responsible for contacting and record updates about donors
-* a Google Calendar to goal deadlines, schedule volunteer committee meetings, invite volunteers to meetings and record responses to invites
+* a Google Calendar to show goal deadlines, schedule volunteer committee meetings, invite volunteers to meetings and record responses to invites
 
 ## General Setup Instructions
 
