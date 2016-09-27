@@ -12,8 +12,9 @@ class VolunteersController < ApplicationController
   end
 
   def show
-    @volunteer = Volunteer.find(params[:id])
-    # @volunteer = Volunteer.where(user_id: params[:id]).first
+    @user = current_user
+    @volunteer = @user.volunteer
+    @donors = Donor.all
   end
 
   def edit
