@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   after_create :make_volunteer
 
+  private
+
   def make_volunteer
     Volunteer.create(:user => self)
   end

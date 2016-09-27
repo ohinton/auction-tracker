@@ -3,15 +3,6 @@
 #### By Olivia Hinton | September 9, 2016
 
 ## Known Bugs
-* Don't sign up, log in with **email: test@email.com, password: password** to access site.
-
-* In User model, I would like to use "after_create :make_volunteer" to create the user-volunteer association when someone signs up.
-
->  Currently I get this error:
-ActiveRecord::RecordNotSaved in Devise::RegistrationsController#create
-Failed to save the new associated volunteer.
-
-> I've checked the database and model relationships, and the model specs are passing. Not sure why it won't create a volunteer after a user is signed up.
 
 * When adding an update to a donor on the index page, I'm currently only able to add the update to the most recent donor created. I can't figure out another way to access the specific donor other than having this in the UpdatesController: @donor = Donor.where(volunteer_id: @volunteer.id).last
 

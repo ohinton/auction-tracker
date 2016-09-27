@@ -18,7 +18,7 @@ class DonorsController < ApplicationController
     @donor = Donor.new(donor_params)
     if @donor.save
       flash[:notice] = "Donor successfully added!"
-      redirect_to volunteers_path
+      redirect_to root_path
     else
       render :new
     end
@@ -46,6 +46,6 @@ class DonorsController < ApplicationController
 
   private
   def donor_params
-    params.require(:donor).permit(:name, :phone, :email, :address, :city, :state, :zip, :volunteer_id)
+    params.require(:donor).permit(:name, :phone, :email, :address, :city, :state, :zip)
   end
 end
