@@ -4,9 +4,10 @@
 
 ## Known Bugs
 
-* When adding an update to a donor on the index page, I'm currently only able to add the update to the most recent donor created. I can't figure out another way to access the specific donor other than having this in the UpdatesController: @donor = Donor.where(volunteer_id: @volunteer.id).last
+9/26/2016
+* Need clarification on how has_many :through relationships work. 
 
-* Having issues with specs, specifically with the hidden form fields for setting up the relationship via ids. I believe some issues would be solved by figuring out the user-volunteer association issue.
+* When adding an update to a donor on the index page, I'm currently only able to add the update to the most recent donor created. I can't figure out another way to access the specific donor other than having this in the UpdatesController: @donor = Donor.where(volunteer_id: @volunteer.id).last
 
 ## Description
 
