@@ -2,13 +2,6 @@
 
 #### By Olivia Hinton | September 9, 2016
 
-## Known Bugs
-
-9/26/2016
-* Need clarification on how has_many :through relationships work. 
-
-* When adding an update to a donor on the index page, I'm currently only able to add the update to the most recent donor created. I can't figure out another way to access the specific donor other than having this in the UpdatesController: @donor = Donor.where(volunteer_id: @volunteer.id).last
-
 ## Description
 
 This app helps you reach your fundraising auction procurement goals by assisting with donor record management and communicating with your volunteer committee!

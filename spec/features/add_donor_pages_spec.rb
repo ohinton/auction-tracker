@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "the add a donor process" do
-  it "adds a new donor" do
+  it "adds a new donor", js: true do
     user = FactoryGirl.create(:user)
     volunteer = FactoryGirl.create(:volunteer)
     login_as user
