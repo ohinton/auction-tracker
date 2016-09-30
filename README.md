@@ -22,6 +22,14 @@ Features include:
 * Launch the Rails server by running command `$ rails s` in the terminal
 * Launch site by visiting localhost:3000 in browser
 
+## To Do List
+- [ ] Make email field optional when adding a donor
+- [ ] Change tables to be a has many / belongs to relationship between volunteer and donors
+- [ ] Change tables to be a has many / belongs to relationship between donor and updates
+- [ ] Format how phone numbers get saved to the database
+- [ ] Add contact person field to donor form
+- [ ] Add donation request website link form field to donor form
+
 ## Tech Used
 
 * Ruby on Rails (v. 5.0.0.1)
