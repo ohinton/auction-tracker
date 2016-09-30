@@ -11,6 +11,8 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
+gem 'geocoder'
+gem 'gmaps4rails'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -23,6 +25,10 @@ group :development, :test do
   gem 'simplecov', require: false
   gem 'poltergeist'
   gem 'database_cleaner'
+  gem 'dotenv-rails'
+  gem 'vcr'
+  gem 'webmock'
+  gem 'paperclip'
 end
 
 group :development do

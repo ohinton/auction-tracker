@@ -1,17 +1,23 @@
 <h1><%= @donor.name %></h1>
 
- <%= link_to "Add an update", new_update_path, :class => "btn btn-success btn-xs" %>
-
 <span><%= link_to "edit", edit_donor_path(@donor), :class => "btn btn-warning btn-xs" %></span>
 <span><%= link_to "delete", donor_path(@donor), :class => "btn btn-danger btn-xs",
                          :data => {:confirm => "Are you sure you want to delete this donor?",
                                    :method => "delete"} %></span>
 
 <hr>
-<h4>Contact info:</h4>
-<p><%= @donor.phone %></p>
-<p><%= @donor.email %></p>
+<h4>Business contact info:</h4>
+<p><%= @donor.business_phone %></p>
+<p><%= @donor.business_email %></p>
+<br>
+<h4>Contact person info:</h4>
+<p><%= @donor.contact_person %></p>
+<p><%= @donor.contact_person_phone %></p>
+<p><%= @donor.contact_person_email %></p>
 <br>
 <h4>Address info:</h4>
 <p><%= @donor.address %></p>
 <p><%= @donor.city %>, <%= @donor.state %> <%= @donor.zip %> </p>
+<br>
+<h4>Donation Request Link</h4>
+<p><%= @donor.donation_request_link %></p>

@@ -2,6 +2,11 @@ class DonorsController < ApplicationController
 
   def index
     @donors = Donor.all
+    @hash = Gmaps4rails.build_markers(@donors) do |donor, marker|
+      marker.lat donor.latitude
+      marker.lng donor.longitude
+      marker.infowindow donor.name
+    end
   end
 
   def show
@@ -9,13 +14,13 @@ class DonorsController < ApplicationController
   end
 
   def new
+    @volunteer = current_user.volunteer
     @donor = Donor.new
-    @user = current_user
-    @volunteer = Volunteer.where(user_id: current_user).first
   end
 
   def create
-    @donor = Donor.new(donor_params)
+    @volunteer = current_user.volunteer
+    @donor = @volunteer.donors.new(donor_params)
     if @donor.save
       flash[:notice] = "Donor successfully added!"
       redirect_to root_path
@@ -46,6 +51,6 @@ class DonorsController < ApplicationController
 
   private
   def donor_params
-    params.require(:donor).permit(:name, :phone, :email, :address, :city, :state, :zip)
+    params.require(:donor).permit(:name, :business_phone, :business_email, :address, :city, :state, :zip, :contact_person, :contact_person_phone, :contact_person_email, :donation_request_link, :volunteer_id)
   end
 end

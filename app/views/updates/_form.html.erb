@@ -1,6 +1,7 @@
 <%= render "layouts/errors", :object => @update %>
 
-<%= form_for @update, remote: true, id:"new_update" do |f| %>
+<%= form_for [@donor, @update], remote: true, id:"new_update" do |f| %>
+<%= f.hidden_field :donor_id, :value => @donor.id %>
   <div class="row">
     <div class="form-group col-md-4">
       <%= f.label :date %>
@@ -11,9 +12,6 @@
       <%= f.text_field :note, :class => "form-control" %>
     </div>
   </div>
-  <%= f.hidden_field :donor_id, :value => @donor.id %>
-
-  <%= f.hidden_field :volunteer_id, :value => @volunteer.id %>
 
   <%= f.submit :class => "btn btn-success"  %>
 <% end %>

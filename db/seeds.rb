@@ -1,7 +1,5 @@
 user = User.create! email: "test@email.com", password: 'password', password_confirmation: 'password'
 
-volunteer = Volunteer.create! first_name: 'Olivia', last_name: 'Hinton', phone: '503-000-0000', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210', user_id: 1
-
 
 donors = Donor.create([
 
@@ -11,9 +9,9 @@ donors = Donor.create([
 
   { name: 'Pabst Blue Ribbon', business_phone: '(503) 000-0000', business_email: '', address: '', city: '', state: '', zip: '', contact_person: 'Matt Slesser', contact_person_email: 'mslessler@gmail.com', contact_person_phone: '(503) 682-7218', donation_request_link: '', volunteer_id: 1 },
 
-  { name: 'Portland Timbers', business_phone: '503-000-0000', business_email: 'timbers@gmail.com', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210', contact_person: 'Jackie Smith', contact_person_email: 'jackie@timbers.com', contact_person_phone: '(503) 000-0000', donation_request_link: 'http://www.timbers.com/stand-together/stand-together-donation-request-form', volunteer_id: 1 },
+  { name: 'Portland Timbers', business_phone: '503-000-0000', business_email: 'timbers@gmail.com', address: '1844 SW Morrison St', city: 'Portland', state: 'OR', zip: '97205', contact_person: 'Jackie Smith', contact_person_email: 'jackie@timbers.com', contact_person_phone: '(503) 000-0000', donation_request_link: 'http://www.timbers.com/stand-together/stand-together-donation-request-form', volunteer_id: 1 },
 
-  { name: 'Pink Martini', business_phone: '', business_email: '', address: '12345 N Main St', city: 'Portland', state: 'OR', zip: '97210', contact_person: 'Devon Smith', contact_person_email: 'devon@pinkmartini.com', contact_person_phone: '(503) 000-0000', donation_request_link: '', volunteer_id: 1 }
+  { name: 'Second Avenue Records', business_phone: '(503) 222-3783', business_email: '', address: '400 SW 2nd Ave', city: 'Portland', state: 'OR', zip: '97204', contact_person: 'Carolyn', contact_person_email: '', contact_person_phone: '', donation_request_link: '', volunteer_id: 1 }
 
   ])
 

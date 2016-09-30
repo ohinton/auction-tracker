@@ -1,4 +1,5 @@
 <h1>Welcome to your dashboard!</h1>
+<p><%= link_to "See a map of all donors", donors_path, :class => "btn btn-default" %></p>
 
 <div class="row">
   <div class="col-md-6">
@@ -7,7 +8,7 @@
     <% if @volunteer.donors.any? %>
       <% @volunteer.donors.each do |donor| %>
         <li><%= link_to donor.name, donor_path(donor) %></li>
-        <p><%= donor.phone %> | <%= donor.email %></p>
+        <p><%= donor.business_phone %> | <%= donor.business_email %></p>
 
         <% if donor.updates.any? %>
         <p>Recent updates: </p>
@@ -18,7 +19,7 @@
         </ul>
         <% end %>
         <br>
-        <span id="donor_update_link_<%= donor.id %>"><%= link_to "Add an update", new_update_path, :class => "btn btn-default btn-xs", remote: true %></span>
+        <span id="donor_update_link_<%= donor.id %>"><%= link_to "Add an update", new_donor_update_path(donor), :class => "btn btn-default btn-xs", remote: true %></span>
       <br>
       <hr>
       <% end %>

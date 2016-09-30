@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root to: 'volunteers#show'
 
   resources :volunteers
-  resources :donors
-  resources :updates
+  
+  resources :donors do
+    resources :updates
+  end
 
 end

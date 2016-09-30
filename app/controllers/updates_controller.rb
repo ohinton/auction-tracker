@@ -10,17 +10,16 @@ class UpdatesController < ApplicationController
 
   def new
     @update = Update.new
-    @user = current_user
-    @volunteer = Volunteer.where(user_id: current_user).first
-    @donor = Donor.where(volunteer_id: @volunteer.id).last
+    @donor = Donor.find(params[:donor_id])
   end
 
   def create
-    @update = Update.new(update_params)
+    @donor = Donor.find(params[:donor_id])
+    @update = @donor.updates.new(update_params)
     if @update.save
       flash[:notice] = "Update successfully added!"
       respond_to do |format|
-        format.html { redirect_to volunteers_path }
+        format.html { redirect_to volunteer_path }
         format.js
       end
     else
@@ -30,6 +29,6 @@ class UpdatesController < ApplicationController
 
   private
   def update_params
-    params.require(:update).permit(:note, :date, :volunteer_id, :donor_id)
+    params.require(:update).permit(:note, :date, :donor_id)
   end
 end

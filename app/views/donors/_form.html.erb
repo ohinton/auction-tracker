@@ -1,6 +1,7 @@
 <%= render "layouts/errors", :object => @donor %>
 
 <%= form_for @donor do |f| %>
+  <%= hidden_field :volunteer_id, :value => @volunteer.id %>
 
   <div class="row">
     <div class="form-group col-md-5">
@@ -11,15 +12,15 @@
 
   <div class="row">
     <div class="form-group col-md-5">
-      <%= f.label :phone %>
-      <%= f.telephone_field :phone, :class => "form-control" %>
+      <%= f.label :business_phone %>
+      <%= f.telephone_field :business_phone, :class => "form-control" %>
     </div>
   </div>
 
   <div class="row">
     <div class="form-group col-md-5">
-      <%= f.label :email %>
-      <%= f.email_field :email, :class => "form-control" %>
+      <%= f.label :business_email %>
+      <%= f.email_field :business_email, :class => "form-control" %>
     </div>
   </div>
 
@@ -48,6 +49,34 @@
     <div class="form-group col-md-5">
       <%= f.label :zip %>
       <%= f.text_field :zip, :class => "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-5">
+      <%= f.label :contact_person %>
+      <%= f.text_field :contact_person, :class => "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-5">
+      <%= f.label :contact_person_phone %>
+      <%= f.telephone_field :contact_person_phone, :class => "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-5">
+      <%= f.label :contact_person_email %>
+      <%= f.email_field :contact_person_email, :class => "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-5">
+      <%= f.label :donation_request_link %>
+      <%= f.text_field :donation_request_link, :class => "form-control" %>
     </div>
   </div>
 
