@@ -1,6 +1,6 @@
 # 🎆 Reach Your Fundraising Auction Goals 🎆
 
-#### By Olivia Hinton | September 9, 2016
+#### By Olivia Hinton | September 2016
 
 ## API Code Review Details
 Using the geocoder and gmaps4rails gems, I added a Google Map on the Donor index page that displays the location of each donor assigned to the signed-in volunteer.
@@ -27,17 +27,19 @@ Features include:
 * Launch site by visiting localhost:3000 in browser
 
 ## To Do List
-* Overall
+Overall
 - [ ] 100% test coverage
 - [ ] Utilize VCR gem
-* Donors
+
+Donors
 - [ ] Fix edit and delete donor paths
 - [ ] Format how phone numbers get saved to the database
 - [ ] Add business hours to donor form
 - [ ] Add true form field to update form to mark if a donor has agreed to donate
 - [ ] Add a true form field to update form to mark if a donor will never donate, or isn't interested in being contacted again
 - [ ] Add if statements around fields to hide them if they don't have any info
-* Volunteers
+
+Volunteers
 - [ ] Add ability for volunteers to upload an avatar
 
 ## Tech Used
