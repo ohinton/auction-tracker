@@ -1,13 +1,10 @@
-# 🎆 Reach Your Fundraising Auction Goals 🎆
+# Auctionary
 
 #### By Olivia Hinton | September 2016
 
-## API Code Review Details
-Using the geocoder and gmaps4rails gems, I added a Google Map on the Donor index page that displays the location of each donor assigned to the signed-in volunteer.
-
 ## Description
 
-This app helps you reach your fundraising auction procurement goals by assisting with donor record management and communicating with your volunteer committee!
+Auctionary makes it easy for volunteers to gather and track in-kind donations for charity auctions. As a former fundraising auction coordinator, I experienced the difficulty that volunteers face when reaching out to donors and keeping track of their responses. The app also helps those leading a volunteer team with setting goals to keep the team engaged and tracking the overall progress. 
 
 Features include:
 * a database of your donors and volunteers, with the ability to assign a volunteer to a donor
@@ -25,22 +22,6 @@ Features include:
 * Run `rails db:schema:load` to create tables
 * Launch the Rails server by running command `$ rails s` in the terminal
 * Launch site by visiting localhost:3000 in browser
-
-## To Do List
-Overall
-- [ ] 100% test coverage
-- [ ] Utilize VCR gem
-
-Donors
-- [ ] Fix edit and delete donor paths
-- [ ] Format how phone numbers get saved to the database
-- [ ] Add business hours to donor form
-- [ ] Add true form field to update form to mark if a donor has agreed to donate
-- [ ] Add a true form field to update form to mark if a donor will never donate, or isn't interested in being contacted again
-- [ ] Add if statements around fields to hide them if they don't have any info
-
-Volunteers
-- [ ] Add ability for volunteers to upload an avatar
 
 ## Tech Used
 
