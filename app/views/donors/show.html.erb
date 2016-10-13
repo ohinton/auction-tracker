@@ -9,6 +9,15 @@
 <h4>Assigned Volunteer</h4>
 <p><%= @volunteer.first_name %></p>
 <br>
+<h4>Recent Updates</h4>
+<% if @donor.updates.any? %>
+<ul>
+  <% @donor.updates.each do |update| %>
+    <li><%= update.date %> | <%= update.note %> </li>
+  <% end %>
+</ul>
+<% end %>
+<br>
 <h4>Business contact info:</h4>
 <p><%= @donor.business_phone %></p>
 <p><%= @donor.business_email %></p>
