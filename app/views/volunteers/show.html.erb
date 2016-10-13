@@ -1,10 +1,12 @@
 <h1>Welcome to your dashboard!</h1>
 
+<% if @volunteer.first_name %>
+
 <div class="row">
   <div class="col-md-6">
+    <% if @volunteer.donors.any? %>
     <h1>Your donors:</h1>
     <ul>
-    <% if @volunteer.donors.any? %>
       <% @volunteer.donors.each do |donor| %>
         <li><%= link_to donor.name, donor_path(donor) %></li>
         <p><%= donor.business_phone %> | <%= donor.business_email %></p>
@@ -31,3 +33,6 @@
   </div>
 
 </div>
+<% else %>
+<%= link_to "Please add your volunteer profile info", edit_volunteer_path(@user.volunteer), :class => "btn btn-default", id: "volunteer_profile_details_link", remote: true %>
+<% end %>
