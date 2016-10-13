@@ -3,9 +3,17 @@ require 'rails_helper'
 describe "the add a donor process" do
   it "adds a new donor", js: true do
     user = FactoryGirl.create(:user)
-    volunteer = FactoryGirl.create(:volunteer)
     login_as user
-    visit volunteer_path(volunteer)
+    visit volunteer_path(user)
+    click_link 'Please add your volunteer profile info'
+    fill_in 'First name', :with => 'TestFirst'
+    fill_in 'Last name', :with => 'TestLast'
+    fill_in 'Phone', :with => '503-000-0000'
+    fill_in 'Address', :with => '12345 N Main St'
+    fill_in 'City', :with => 'Portland'
+    fill_in 'State', :with => 'OR'
+    fill_in 'Zip', :with => '97210'
+    click_on 'Update Volunteer'
     click_link 'Add a new donor'
     fill_in 'Name', :with => 'Test Name'
     fill_in 'Business phone', :with => '503-000-0000'

@@ -33,10 +33,12 @@ class DonorsController < ApplicationController
 
   def edit
     @donor = Donor.find(params[:id])
+    @volunteer = current_user.volunteer
   end
 
   def update
     @donor = Donor.find(params[:id])
+    @volunteer = @donor.volunteer
     if @donor.update(donor_params)
       flash[:notice] = "Donor successfully updated!"
       redirect_to donors_path
