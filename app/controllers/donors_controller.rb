@@ -11,6 +11,8 @@ class DonorsController < ApplicationController
 
   def show
     @donor = Donor.find(params[:id])
+    volunteer_id = @donor.volunteer_id
+    @volunteer = Volunteer.find(volunteer_id)
   end
 
   def new
