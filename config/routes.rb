@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root to: 'volunteers#show'
+  # root to: 'volunteers#show'
+  root to: 'home#index'
 
   resources :volunteers
   

@@ -1,0 +1,14 @@
+<div class="hero">
+  <div class="row">
+    <h1>Making Auctions Easier</h1>
+    <hr>
+    <p>Auctionary was developed by a former fundraising auction coordinator who wanted to make it easier for volunteers to collect in-kind donations for charity auctions.</p>
+    <%if current_user%>
+    <%= link_to "Sign In", new_user_session_path, :class => "btn-lg" %>
+    <%else%>
+    <%= link_to "Create A New Account Now", new_user_registration_path, :class => "btn-lg" %>
+    <%end%>
+
+  </div>
+
+</div>
