@@ -15,7 +15,7 @@ class VolunteersController < ApplicationController
     @volunteer = Volunteer.find(params[:id])
     @volunteer.update(volunteer_params)
       flash[:notice] = "Your profile details were successfully updated!"
-      redirect_to root_path
+      redirect_to volunteer_path
   end
 
   private

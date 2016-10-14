@@ -7,6 +7,8 @@ class DonorsController < ApplicationController
       marker.lng donor.longitude
       marker.infowindow donor.name
     end
+    @volunteer = current_user.volunteer
+
   end
 
   def show
@@ -25,7 +27,7 @@ class DonorsController < ApplicationController
     @donor = @volunteer.donors.new(donor_params)
     if @donor.save
       flash[:notice] = "Donor successfully added!"
-      redirect_to root_path
+      redirect_to volunteer_path(@volunteer)
     else
       render :new
     end

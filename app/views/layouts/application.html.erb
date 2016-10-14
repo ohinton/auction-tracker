@@ -14,14 +14,14 @@
   </head>
 
   <body>
+    <%= flash[:alert] %>
+    <%= flash[:notice] %>
 
     <%= render "layouts/navbar" %>
 
     <div class="container">
-      <%= flash[:alert] %>
-      <%= flash[:notice] %>
-    </div>
       <%= yield %>
+    </div>
 
   </body>
 </html>
