@@ -1,10 +1,10 @@
 class UpdatesController < ApplicationController
 
-
-
   def new
     @update = Update.new
     @donor = Donor.find(params[:donor_id])
+    @volunteer = current_user.volunteer
+
   end
 
   def create

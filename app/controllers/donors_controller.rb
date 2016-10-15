@@ -8,7 +8,6 @@ class DonorsController < ApplicationController
       marker.infowindow donor.name
     end
     @volunteer = current_user.volunteer
-
   end
 
   def show

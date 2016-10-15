@@ -591,6 +591,7 @@
         1,
         1,
         null,
+        null,
         1,
         null,
         1,
@@ -626,6 +627,9 @@
       "/Users/olivia/Desktop/auction-tracker/app/controllers/application_controller.rb": [
         1,
         1,
+        null,
+        1,
+        0,
         null,
         null,
         null
@@ -670,6 +674,7 @@
         2,
         2,
         null,
+        3,
         null,
         null,
         1,
@@ -722,14 +727,23 @@
         null,
         null
       ],
+      "/Users/olivia/Desktop/auction-tracker/app/controllers/home_controller.rb": [
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
       "/Users/olivia/Desktop/auction-tracker/app/controllers/updates_controller.rb": [
         1,
         null,
-        null,
-        null,
         1,
         2,
         2,
+        2,
+        null,
         null,
         null,
         1,
@@ -767,25 +781,25 @@
         1,
         null,
         1,
-        11,
-        11,
-        11,
+        10,
+        10,
+        10,
         null,
         null,
         1,
-        4,
+        3,
         null,
         null,
         1,
-        4,
-        4,
-        4,
-        4,
+        3,
+        3,
+        3,
+        3,
         null,
         null,
         1,
         1,
-        4,
+        3,
         null,
         null,
         null
@@ -955,7 +969,7 @@
         1,
         1,
         1,
-        1,
+        0,
         null,
         null
       ],
@@ -967,7 +981,7 @@
         1,
         1,
         1,
-        1,
+        0,
         null,
         null
       ],
@@ -1009,10 +1023,10 @@
         1,
         1,
         1,
-        1,
-        1,
-        1,
-        1,
+        0,
+        0,
+        0,
+        0,
         null,
         null,
         null
@@ -1024,7 +1038,7 @@
         1,
         1,
         1,
-        1,
+        0,
         null,
         null
       ],
@@ -1069,6 +1083,6 @@
         null
       ]
     },
-    "timestamp": 1476397807
+    "timestamp": 1476491013
   }
 }
