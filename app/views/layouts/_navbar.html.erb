@@ -3,7 +3,7 @@
     <% if user_signed_in? %>
     <%= link_to "Dashboard", volunteer_path(@volunteer), :class => "brand-logo", :id => "logo-container" %>
     <% else %>
-    <a id="logo-container" href="/" class="brand-logo">Auctionary</a>
+    <%= link_to "Auctionary", root_path, :class => "brand-logo", :id => "logo-container" %>
     <% end %>
     <ul class="right hide-on-med-and-down">
       <% if user_signed_in? %>

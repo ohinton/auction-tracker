@@ -19,8 +19,12 @@
 
     <%= render "layouts/navbar" %>
 
-    <div class="container">
-      <%= yield %>
+    <% if !current_page?('/') %>
+      <div class="container">
+    <% else %>
+      <div class="">
+    <%end%>
+        <%= yield %>
     </div>
 
   </body>
