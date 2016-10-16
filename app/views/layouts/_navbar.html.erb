@@ -1,7 +1,7 @@
 <nav class="white" role="navigation">
   <div class="nav-wrapper container">
     <% if user_signed_in? %>
-    <%= link_to "Dashboard", volunteer_path(@volunteer), :class => "brand-logo", :id => "logo-container" %>
+    <%= link_to "Dashboard", volunteer_path(current_user.volunteer), :class => "brand-logo", :id => "logo-container" %>
     <% else %>
     <%= link_to "Auctionary", root_path, :class => "brand-logo", :id => "logo-container" %>
     <% end %>
