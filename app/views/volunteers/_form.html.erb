@@ -1,6 +1,10 @@
 <%= render "layouts/errors", :object => @volunteer %>
 
 <%= form_for @volunteer do |f|%>
+  <%= f.label :photo %>
+  <%= f.file_field :photo %>
+  <br>
+  <br>
   <%= f.label :first_name %>
   <%= f.text_field :first_name, :class => "form-control" %>
   <%= f.label :last_name %>

@@ -1,4 +1,4 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h4>Edit <%= resource_name.to_s.humanize %></h4>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -44,14 +44,14 @@
   </div>
 <% end %>
 
-<h3>Need to cancel your account?</h3>
+<h5>Need to cancel your account?</h5>
 
 <%= button_to "Cancel my account", registration_path(resource_name), :class => "btn btn-default", data: { confirm: "Are you sure?" }, method: :delete %>
 
 
-<h1>Edit your profile info</h1>
-
-<h1><%= @user.volunteer.first_name %> <%= @user.volunteer.last_name %></h1>
+<h4>Edit your profile info</h4>
+<%= image_tag @user.volunteer.photo(:thumb) %>
+<h5><%= @user.volunteer.first_name %> <%= @user.volunteer.last_name %></h5>
 
 <span><%= link_to "edit", edit_volunteer_path(@user.volunteer), :class => "btn btn-warning btn-xs" %></span>
 
