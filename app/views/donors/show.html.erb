@@ -22,6 +22,18 @@
 <p><%= @donor.business_phone %></p>
 <p><%= @donor.business_email %></p>
 <br>
+<h4>Business information</h4>
+<p>Days Open</p>
+<% if @donor.updates.any? %>
+  <ul>
+  <% @donor.days.each do |day| %>
+    <li><%= day.name %> </li>
+    <% end %>
+  </ul>
+  <% end %>
+<br>
+<p><%= @donor.hours_am %> - <%= @donor.hours_pm %></p>
+<br>
 <h4>Contact person info:</h4>
 <p><%= @donor.contact_person %></p>
 <p><%= @donor.contact_person_phone %></p>
