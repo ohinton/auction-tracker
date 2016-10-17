@@ -2,6 +2,7 @@ class Donor < ActiveRecord::Base
   has_many :updates
   belongs_to :volunteer
   has_and_belongs_to_many :days
+  belongs_to :donation_status
 
   geocoded_by :full_address
   after_validation :geocode

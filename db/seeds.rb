@@ -32,3 +32,9 @@ donors = Donor.create([
     { name: 'Saturday'},
     { name: 'Sunday'}
     ])
+
+donation_statuses = DonationStatus.create([
+  { description: 'Maybe'},
+  { description: 'Yes'},
+  { description: 'No'}
+  ])
