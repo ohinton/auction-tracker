@@ -54,6 +54,18 @@
 
   <div class="row">
     <div class="form-group col-md-5">
+      <%= f.label "Days Open" %>
+      <%= f.collection_check_boxes :day_ids, Day.all, :id, :name, :include_hidden => false do |b| %>
+        <div class="collection-check-box">
+          <%= b.check_box %>
+          <%= b.label %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-5">
       <%= f.label :contact_person %>
       <%= f.text_field :contact_person, :class => "form-control" %>
     </div>

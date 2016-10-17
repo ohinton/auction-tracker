@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161016231737) do
+ActiveRecord::Schema.define(version: 20161017003810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "days", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "days_donors", id: false, force: :cascade do |t|
+    t.integer "day_id",   null: false
+    t.integer "donor_id", null: false
+  end
 
   create_table "donors", force: :cascade do |t|
     t.string   "name"
@@ -32,6 +41,8 @@ ActiveRecord::Schema.define(version: 20161016231737) do
     t.string   "donation_request_link"
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "hours_am"
+    t.integer  "hours_pm"
   end
 
   create_table "updates", force: :cascade do |t|
