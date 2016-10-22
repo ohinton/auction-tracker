@@ -7,7 +7,7 @@
     <div class="row">
       <div class="col l6">
         <h5><%= link_to donor.name, donor_path(donor) %></h5>
-        <p>Donation status: <%= donor.donation_status_id %> </p>
+        <p>Donation status: <%= DonationStatus.find(donor.donation_status_id).description %> </p>
         <% if donor.updates.any? %>
         <p>Recent updates: </p>
         <ul>

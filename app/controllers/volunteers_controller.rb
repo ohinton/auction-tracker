@@ -3,8 +3,7 @@ class VolunteersController < ApplicationController
 
   def show
     @user = current_user
-    @volunteer = current_user.volunteer
-    @donors = Donor.all
+    @volunteer = @user.volunteer
   end
 
   def edit
