@@ -1,123 +1,77 @@
-<%= render "layouts/errors", :object => @donor %>
+<div class="row">
+  <div class="col l6">
+    <%= render "layouts/errors", :object => @donor %>
 
-<%= form_for @donor do |f| %>
-  <%= hidden_field :volunteer_id, :value => @volunteer.id %>
+    <%= form_for @donor do |f| %>
+      <%= hidden_field :volunteer_id, :value => @volunteer.id %>
 
-  <div class="row">
-    <div class="form-group col-md-5">
-      <%= f.label :name %>
-      <%= f.text_field :name, :class => "form-control" %>
-    </div>
-  </div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
 
-  <div class="row">
-    <div class="form-group col-md-5">
-      <%= f.label :business_phone %>
-      <%= f.telephone_field :business_phone, :class => "form-control" %>
-    </div>
-  </div>
+        <%= f.label :business_phone %>
+        <%= f.telephone_field :business_phone %>
 
-  <div class="row">
-    <div class="form-group col-md-5">
-      <%= f.label :business_email %>
-      <%= f.email_field :business_email, :class => "form-control" %>
-    </div>
-  </div>
+        <%= f.label :business_email %>
+        <%= f.email_field :business_email %>
 
-  <div class="row">
-    <div class="form-group col-md-5">
-      <%= f.label :address %>
-      <%= f.text_field :address, :class => "form-control" %>
-    </div>
-  </div>
+        <%= f.label :address %>
+        <%= f.text_field :address %>
 
-  <div class="row">
-    <div class="form-group col-md-5">
-      <%= f.label :city %>
-      <%= f.text_field :city, :class => "form-control" %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="form-group col-md-5">
-      <%= f.label :state %>
-      <%= f.text_field :state, :class => "form-control" %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="form-group col-md-5">
-      <%= f.label :zip %>
-      <%= f.text_field :zip, :class => "form-control" %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="form-group col-md-5">
-      <%= f.label "Days Open" %>
-      <%= f.collection_check_boxes :day_ids, Day.all, :id, :name do |b| %>
-        <div class="collection-check-box">
-          <%= b.check_box %>
-          <%= b.label %>
+        <div class="row">
+          <div class="col s6">
+            <%= f.label :city %>
+            <%= f.text_field :city %>
+          </div>
+          <div class="col s6">
+            <%= f.label :state %>
+            <%= f.text_field :state %>
+          </div>
         </div>
-      <% end %>
-    </div>
-  </div>
 
-  <div class="row">
-    <div class="form-group col-md-5">
-      <%= f.label "Donation Status" %>
-      <%= f.collection_radio_buttons :donation_status_id, DonationStatus.all, :id, :description, :include_hidden => false do |b| %>
+        <%= f.label :zip %>
+        <%= f.text_field :zip %>
+
+        <%= f.label "Days Open" %>
+        <%= f.collection_check_boxes :day_ids, Day.all, :id, :name do |b| %>
+          <div class="collection-check-box">
+            <%= b.check_box %>
+            <%= b.label %>
+          </div>
+        <% end %>
+
+        <br>
+        <div class="row">
+          <div class="col s6">
+          <%= f.label :hours_am, "Open" %>
+          <%= f.time_field :hours_am %>
+          </div>
+          <div class="col s6">
+            <%= f.label :hours_pm, "Close" %>
+            <%= f.time_field :hours_pm %>
+          </div>
+        </div>
+
+        <%= f.label :contact_person %>
+        <%= f.text_field :contact_person %>
+
+        <%= f.label :contact_person_phone %>
+        <%= f.telephone_field :contact_person_phone %>
+
+        <%= f.label :contact_person_email %>
+        <%= f.email_field :contact_person_email %>
+
+        <%= f.label :donation_request_link %>
+        <%= f.text_field :donation_request_link%>
+
+        <%= f.label :donation_status_id, "Donation Status (Will the donor give this year?)" %>
+        <%= f.collection_radio_buttons :donation_status_id, DonationStatus.all, :id, :description, :include_hidden => false do |b| %>
         <div class="collection-radio-button">
           <%= b.radio_button %>
           <%= b.label %>
         </div>
-      <% end %>
-    </div>
+        <% end %>
+        <br>
+      <%= f.submit :class => "waves-effect waves-light btn"  %>
+    <% end %>
   </div>
-
-  <div class="row">
-    <div class="form-group col-md-5">
-      <%= f.label :hours_am %>
-      <%= f.time_field :hours_am %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="form-group col-md-5">
-      <%= f.label :hours_pm %>
-      <%= f.time_field :hours_pm %>
-    </div>
-  </div>
-
-
-  <div class="row">
-    <div class="form-group col-md-5">
-      <%= f.label :contact_person %>
-      <%= f.text_field :contact_person, :class => "form-control" %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="form-group col-md-5">
-      <%= f.label :contact_person_phone %>
-      <%= f.telephone_field :contact_person_phone, :class => "form-control" %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="form-group col-md-5">
-      <%= f.label :contact_person_email %>
-      <%= f.email_field :contact_person_email, :class => "form-control" %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="form-group col-md-5">
-      <%= f.label :donation_request_link %>
-      <%= f.text_field :donation_request_link, :class => "form-control" %>
-    </div>
-  </div>
-
-  <%= f.submit :class => "btn btn-success"  %>
-<% end %>
+</div>
