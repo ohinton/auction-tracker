@@ -1,24 +1,24 @@
 <%= render "layouts/errors", :object => @volunteer %>
 
 <%= form_for @volunteer do |f|%>
-  <%= f.label :photo %>
-  <%= f.file_field :photo %>
+  <%= f.label :photo, "Profile Photo" %>
+  <%= f.file_field :photo, :class => "file-field input-field file-path-wrapper" %>
   <br>
   <br>
   <%= f.label :first_name %>
-  <%= f.text_field :first_name, :class => "form-control" %>
+  <%= f.text_field :first_name %>
   <%= f.label :last_name %>
-  <%= f.text_field :last_name, :class => "form-control" %>
+  <%= f.text_field :last_name %>
   <%= f.label :phone %>
-  <%= f.telephone_field :phone, :class => "form-control" %>
+  <%= f.telephone_field :phone %>
   <%= f.label :address %>
-  <%= f.text_field :address, :class => "form-control" %>
+  <%= f.text_field :address %>
   <%= f.label :city %>
-  <%= f.text_field :city, :class => "form-control" %>
+  <%= f.text_field :city %>
   <%= f.label :state %>
-  <%= f.text_field :state, :class => "form-control" %>
+  <%= f.text_field :state %>
   <%= f.label :zip %>
-  <%= f.text_field :zip, :class => "form-control" %>
+  <%= f.text_field :zip %>
   <%= f.hidden_field :user_id, :value => current_user.id %>
-  <%= f.submit :class => "btn btn-success" %>
+  <%= f.submit :class => "waves-effect waves-light btn" %>
 <% end %>
