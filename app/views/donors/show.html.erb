@@ -1,47 +1,43 @@
-<h1><%= @donor.name %></h1>
+<div class="row">
+  <div class="col s12">
+    <h4><%= @donor.name %></h4>
+    <%= link_to "Edit", edit_donor_path(@donor) %> |
+    <%= link_to "Delete", donor_path(@donor),
+    :data => {:confirm => "Are you sure you want to delete this donor?",
+      :method => "delete"} %>
+    <div class="divider"></div>
+  <p><%= @donor.address %>, <%= @donor.city %>, <%= @donor.state %> <%= @donor.zip %> | <%= @donor.business_phone %> | <a href="mailto:<%= @donor.business_email %>"><%= @donor.business_email %></a></p>
+</div>
 
-<span><%= link_to "edit", edit_donor_path(@donor), :class => "btn btn-warning btn-xs" %></span>
-<span><%= link_to "delete", donor_path(@donor), :class => "btn btn-danger btn-xs",
-                         :data => {:confirm => "Are you sure you want to delete this donor?",
-                                   :method => "delete"} %></span>
 
-<hr>
-<h4>Assigned Volunteer</h4>
-<p><%= @volunteer.first_name %></p>
-<br>
-<h4>Recent Updates</h4>
-<% if @donor.updates.any? %>
-<ul>
-  <% @donor.updates.each do |update| %>
-    <li><%= update.date %> | <%= update.note %> </li>
-  <% end %>
-</ul>
-<% end %>
-<br>
-<h4>Business contact info:</h4>
-<p><%= @donor.business_phone %></p>
-<p><%= @donor.business_email %></p>
-<br>
-<h4>Business information</h4>
-<p>Days Open</p>
-<% if @donor.updates.any? %>
-  <ul>
-  <% @donor.days.each do |day| %>
-    <li><%= day.name %> </li>
+  <div class="col m6">
+    <h5>Donor Details</h5>
+    <div class="divider"></div>
+    <p><b>Assigned volunteer:</b> <%= @volunteer.first_name %></p>
+    <p><b>Donor contact:</b></p>
+    <p><%= @donor.contact_person %></p>
+    <p><%= @donor.contact_person_phone %> | <a href="mailto:<%= @donor.contact_person_email %>"><%= @donor.contact_person_email %></a></p>
+    <p><b>Days open:</b></p>
+      <ul>
+        <% @donor.days.each do |day| %>
+        <li><%= day.name %> </li>
+        <% end %>
+      </ul>
+     <p><b>General operating hours:</b> <%= @donor.hours_am %> a.m. - <%= @donor.hours_pm %> p.m.</p>
+     <p><b>Donation request link:</b> <a href="<%= @donor.donation_request_link %>"><%= @donor.donation_request_link %></a></p>
+  </div>
+
+  <div class="col m6">
+    <h5>Recent Updates</h5>
+    <div class="divider"></div>
+    <% if @donor.updates.any? %>
+    <ul>
+      <% @donor.updates.each do |update| %>
+        <li><%= update.date %> | <%= update.note %> </li>
+      <% end %>
+    </ul>
     <% end %>
-  </ul>
-  <% end %>
-<br>
-<p><%= @donor.hours_am %> - <%= @donor.hours_pm %></p>
-<br>
-<h4>Contact person info:</h4>
-<p><%= @donor.contact_person %></p>
-<p><%= @donor.contact_person_phone %></p>
-<p><%= @donor.contact_person_email %></p>
-<br>
-<h4>Address info:</h4>
-<p><%= @donor.address %></p>
-<p><%= @donor.city %>, <%= @donor.state %> <%= @donor.zip %> </p>
-<br>
-<h4>Donation Request Link</h4>
-<p><%= @donor.donation_request_link %></p>
+    <br>
+  </div>
+
+</div>
