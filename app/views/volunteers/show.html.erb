@@ -1,5 +1,5 @@
 <% if @volunteer.first_name %>
-  <p><%= link_to "Add a new donor", new_donor_path, :class => "btn btn-success btn-lg", id: "new_donor_link", remote: true %></p>
+  <p><%= link_to "Add a new donor", new_donor_path, :class => "waves-effect waves-light btn-large", id: "new_donor_link", remote: true %></p>
 
   <% if @volunteer.donors.any? %>
   <h5>Your Donor List</h5>
@@ -27,5 +27,6 @@
   <% end %>
 
   <% else %>
-  <%= link_to "Please add your volunteer profile info", edit_volunteer_path(@user.volunteer), :class => "btn btn-default", id: "volunteer_profile_details_link", remote: true %>
+    <h1>Welcome!</h1>
+    <%= link_to "Please add your volunteer profile info", edit_volunteer_path(@user.volunteer), :class => "waves-effect waves-light btn-large", id: "volunteer_profile_details_link", remote: true %>
   <% end %>
