@@ -28,7 +28,8 @@ Features include:
 * Ruby on Rails (v. 5.0.0.1)
 * Active Record
 * PostgreSQL
-* Bootstrap/SCSS
+* Google Maps API
+* Materialize CSS framework
 
 ### License
 
