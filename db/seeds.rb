@@ -1,40 +1,49 @@
-user = User.create! email: "test@email.com", password: 'password', password_confirmation: 'password'
+User.create! email: "test@email.com", password: 'password', password_confirmation: 'password'
 
+donor_list = [
+  ['VooDoo Doughnuts', '(503) 241-4704', 'info@voodoo.com', '22 SW 3rd Ave', 'Portland', 'OR', '97204', 'Kenneth Pogson', 'kenneth@voodoo.com', '(503) 682-7218', 'http://voodoodoughnut.com/', 8, 17, 1, 1],
+  ['Papa Hayden - East', '(503) 232-9440', 'east@papahaydn.com', '5829 SE Milwaukie Ave', 'Portland', 'OR', '97202', 'John Smith', 'john@papahaydn.com', '(503) 000-0000', 'http://www.papahaydn.com/papa-haydn-east/', 8, 17, 1, 1],
+  ['Pabst Blue Ribbon', '(503) 000-0000', 'info@pbr.com', '', '', '', '', 'Matt Slesser', 'mslessler@pbr.com', '(503) 682-7218', '', 8, 17, 1, 2],
+  ['Portland Timbers', '503-000-0000', 'info@timbers.com', '1844 SW Morrison St', 'Portland', 'OR', '97205', 'Jackie Smith', 'jackie@timbers.com', '(503) 000-0000', 'http://www.timbers.com/stand-together/stand-together-donation-request-form', 10, 16, 1, 1],
+  ['Second Avenue Records', '(503) 222-3783', '', '400 SW 2nd Ave', 'Portland', 'OR', '97204', 'Carolyn', '', '', '', 10, 13, 1, 3]
+]
 
-donors = Donor.create([
+donor_list.each do |name, business_phone, business_email, address, city, state, zip, contact_person, contact_person_email, contact_person_phone, donation_request_link, hours_am, hours_pm, volunteer_id, donation_status_id|
+  Donor.create(name: name, business_phone: business_phone, business_email: business_email, address: address, city: city, state: state, zip: zip, contact_person: contact_person, contact_person_email: contact_person_email, contact_person_phone: contact_person_phone, donation_request_link: donation_request_link, hours_am: hours_am, hours_pm: hours_pm, volunteer_id: volunteer_id, donation_status_id: donation_status_id)
+end
 
-  { name: 'VooDoo Doughnuts', business_phone: '(503) 241-4704', business_email: '', address: '22 SW 3rd Ave', city: 'Portland', state: 'OR', zip: '97204', contact_person: 'Jane Snow', contact_person_email: 'jane@voodoo.com', contact_person_phone: '(503) 682-7218', donation_request_link: '', volunteer_id: 1, hours_am: 8, hours_pm: 5 },
+update_list = [
+  ['Left message for Kenneth', '2016-10-1', 1],
+  ['Emailed John', '2016-10-2', 2],
+  ['Talked to Matt and he said PBR can donate! Follow up next week with donation details.', '2016-10-2', 3],
+  ['Left message for Jackie', '2016-10-2', 4],
+  ['Talked to Carolyn. Not interested in donating, can only donate to schools.', '2016-10-2', 5]
+]
 
-  { name: 'Papa Hayden - East', business_phone: '(503) 232-9440', business_email: 'east@papahaydn.com', address: '5829 SE Milwaukie Ave', city: 'Portland', state: 'OR', zip: '97202', contact_person: 'John Snow', contact_person_email: 'john@papahaydn.com', contact_person_phone: '(503) 000-0000', donation_request_link: '', volunteer_id: 1, hours_am: 8, hours_pm: 5 },
+update_list.each do |note, date, donor_id|
+  Update.create(note: note, date: date, donor_id: donor_id)
+end
 
-  { name: 'Pabst Blue Ribbon', business_phone: '(503) 000-0000', business_email: '', address: '', city: '', state: '', zip: '', contact_person: 'Matt Slesser', contact_person_email: 'mslessler@gmail.com', contact_person_phone: '(503) 682-7218', donation_request_link: '', volunteer_id: 1, hours_am: 8, hours_pm: 5 },
+day_list = [
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+  'Sunday'
+]
 
-  { name: 'Portland Timbers', business_phone: '503-000-0000', business_email: 'timbers@gmail.com', address: '1844 SW Morrison St', city: 'Portland', state: 'OR', zip: '97205', contact_person: 'Jackie Smith', contact_person_email: 'jackie@timbers.com', contact_person_phone: '(503) 000-0000', donation_request_link: 'http://www.timbers.com/stand-together/stand-together-donation-request-form', volunteer_id: 1, hours_am: 8, hours_pm: 5 },
+day_list.each do |name|
+  Day.create(name: name)
+end
 
-  { name: 'Second Avenue Records', business_phone: '(503) 222-3783', business_email: '', address: '400 SW 2nd Ave', city: 'Portland', state: 'OR', zip: '97204', contact_person: 'Carolyn', contact_person_email: '', contact_person_phone: '', donation_request_link: '', volunteer_id: 1, hours_am: 10, hours_pm: 4 }
+status_list = [
+  'Maybe',
+  'Yes',
+  'No'
+]
 
-  ])
-
-  updates = Update.create([
-    { note: 'Will donate, can mail in donation on Oct. 1', date: '2/1/2016', donor_id: 1 },
-    { note: 'Can not donate this year, but follow up in 2017', date: '2/10/2016', donor_id: 2 },
-    { note: 'Might donate, follow up next week', date: '1/15/2016', donor_id: 3 },
-    { note: 'Will donate, volunteer to pick up donation on 2/1/2016', date: '1/17/2016', donor_id: 4 },
-    { note: 'Not interested in donating, can only donate to schools', date: '1/10/2016', donor_id: 5 }
-    ])
-
-  days = Day.create([
-    { name: 'Monday'},
-    { name: 'Tuesday'},
-    { name: 'Wednesday'},
-    { name: 'Thursday'},
-    { name: 'Friday'},
-    { name: 'Saturday'},
-    { name: 'Sunday'}
-    ])
-
-donation_statuses = DonationStatus.create([
-  { description: 'Maybe'},
-  { description: 'Yes'},
-  { description: 'No'}
-  ])
+status_list.each do |description|
+  DonationStatus.create(description: description)
+end
