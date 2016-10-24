@@ -3,6 +3,7 @@ require 'rails_helper'
 describe "the add a donor process" do
   it "adds a new donor", js: true do
     user = FactoryGirl.create(:user)
+    FactoryGirl.create(:donation_status)
     login_as user
     visit volunteer_path(user)
     click_link 'Please add your volunteer profile info'
@@ -26,13 +27,14 @@ describe "the add a donor process" do
     fill_in 'Contact person phone', :with => '503-000-0000'
     fill_in 'Contact person email', :with => 'test_contact@email.com'
     fill_in 'Donation request link', :with => 'www.example.com'
+    find(:xpath, "//label[@for='donor_donation_status_id_1']").click
     click_on 'Create Donor'
     expect(page).to have_content 'Donor successfully added!'
   end
 
   it "gives error when no name is entered" do
     user = FactoryGirl.create(:user)
-    volunteer = FactoryGirl.create(:volunteer)
+    FactoryGirl.create(:volunteer)
     login_as user
     visit new_donor_path
     click_on 'Create Donor'

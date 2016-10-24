@@ -3,8 +3,9 @@ require 'rails_helper'
 describe "the add an update process" do
   it "adds a new update", js: true do
     user = FactoryGirl.create(:user)
-    donor = FactoryGirl.create(:donor)
-    update = FactoryGirl.create(:update)
+    FactoryGirl.create(:donor)
+    FactoryGirl.create(:update)
+    FactoryGirl.create(:donation_status)
     login_as user
     visit volunteer_path(user)
     click_link 'Please add your volunteer profile info'
@@ -28,8 +29,9 @@ describe "the add an update process" do
     fill_in 'Contact person phone', :with => '503-000-0000'
     fill_in 'Contact person email', :with => 'test_contact@email.com'
     fill_in 'Donation request link', :with => 'www.example.com'
+    find(:xpath, "//label[@for='donor_donation_status_id_1']").click
     click_on 'Create Donor'
-    click_link 'Add an update'
+    find('#donor_update_link_3').click
     fill_in 'Date', :with => '01/01/2016'
     fill_in 'Note', :with => 'Test note'
     click_on 'Create Update'
@@ -37,10 +39,11 @@ describe "the add an update process" do
     expect(page).to have_content 'Test note'
   end
 
-  it "gives error when no note is entered" do
+  it "gives error when no note is entered", js: true do
     user = FactoryGirl.create(:user)
-    donor = FactoryGirl.create(:donor)
-    update = FactoryGirl.create(:update)
+    FactoryGirl.create(:donor)
+    FactoryGirl.create(:update)
+    FactoryGirl.create(:donation_status)
     login_as user
     visit volunteer_path(user)
     click_link 'Please add your volunteer profile info'
@@ -64,8 +67,9 @@ describe "the add an update process" do
     fill_in 'Contact person phone', :with => '503-000-0000'
     fill_in 'Contact person email', :with => 'test_contact@email.com'
     fill_in 'Donation request link', :with => 'www.example.com'
+    find(:xpath, "//label[@for='donor_donation_status_id_1']").click
     click_on 'Create Donor'
-    click_link 'Add an update'
+    find('#donor_update_link_3').click
     fill_in 'Date', :with => '01/01/2016'
     fill_in 'Note', :with => ''
     click_on 'Create Update'
