@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161017060128) do
+ActiveRecord::Schema.define(version: 20161106200324) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,8 +45,6 @@ ActiveRecord::Schema.define(version: 20161017060128) do
     t.string   "donation_request_link"
     t.float    "latitude"
     t.float    "longitude"
-    t.integer  "hours_am"
-    t.integer  "hours_pm"
     t.integer  "donation_status_id"
   end
 
