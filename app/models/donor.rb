@@ -11,6 +11,8 @@ class Donor < ActiveRecord::Base
   validates :address, :presence => true
   validates :state, :presence => true
 
+  default_scope {order('name ASC')} 
+
   private
 
   def full_address
@@ -18,7 +20,7 @@ class Donor < ActiveRecord::Base
   end
 
   def self.search(search)
-    where("name LIKE ?", "%#{search}%") 
+    where("name LIKE ?", "%#{search}%")
   end
 
 end
