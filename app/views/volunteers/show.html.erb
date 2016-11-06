@@ -9,13 +9,8 @@
         <h5><%= link_to donor.name, donor_path(donor) %></h5>
         <p>Donation status: <%= DonationStatus.find(donor.donation_status_id).description %> </p>
         <% if donor.updates.any? %>
-        <p>Recent updates: </p>
-        <ul>
-          <% donor.updates.each do |update| %>
-            <li><%= update.date %> | <%= update.note %> </li>
-          <% end %>
+          <p><%= donor.updates.last.date %> | <%= donor.updates.last.note %></p>
         <% end %>
-      </ul>
       </div>
 
       <div class="col l6">
