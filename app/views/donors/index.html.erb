@@ -1,24 +1,40 @@
-<h1>Donors</h1>
+<div class="row">
+  <div class="col l4">
+    <h2>Donors</h2>
+    <p>
+    <%= form_tag donors_path, :method => 'get', :class => "form-inline" do %>
+      <%= text_field_tag :search, params[:search], :class => "form-control", :placeholder=> "Search donors" %>
+      <%= submit_tag "Search", :name => nil, :class => "btn btn-default" %>
+    <% end %>
+    </p>
 
-<ul>
-  <% @donors.each do |donor| %>
-    <li><%= link_to donor.name, donor_path(donor) %></li>
-  <% end %>
-</ul>
+    <% if @donors.blank? %>
+      <h4>There are no recipes containing the term <%= params[:search] %>.</h4>
+    <% end %>
 
-<%= link_to "Add a new donor", new_donor_path, :class => "btn btn-success btn-lg" %>
+    <ul>
+      <% @donors.each do |donor| %>
+        <li><%= link_to donor.name, donor_path(donor) %></li>
+      <% end %>
+    </ul>
+  </div>
 
-<h1>Map of All Donors</h1>
-
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
+  <div class="col l8">
+    <%= link_to "Add a new donor", new_donor_path, :class => "btn btn-success btn-lg" %>
+    <br>
+    <br>
+    <% if @donors.any? %>
+      <div style='width: auto;'>
+        <div id="map" style='width: auto; height: 400px;'></div>
+      </div>
+      <script type="text/javascript">
+        handler = Gmaps.build('Google');
+        handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+          markers = handler.addMarkers(<%=raw @hash.to_json %>)
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+        });
+      </script>
+    <% end %>
+  </div>
 </div>
-
-<script type="text/javascript">
-  handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-    markers = handler.addMarkers(<%=raw @hash.to_json %>)
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
-  });
-</script>

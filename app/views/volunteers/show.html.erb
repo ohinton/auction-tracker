@@ -2,23 +2,22 @@
   <p><%= link_to "Add a new donor", new_donor_path, :class => "waves-effect waves-light btn-large", id: "new_donor_link", remote: true %></p>
 
   <% if @volunteer.donors.any? %>
-  <h5>Your Donor List</h5>
-  <% @volunteer.donors.each do |donor| %>
-    <div class="row">
-      <div class="col l6">
-        <h5><%= link_to donor.name, donor_path(donor) %></h5>
-        <p>Donation status: <%= DonationStatus.find(donor.donation_status_id).description %> </p>
-        <% if donor.updates.any? %>
-          <p><%= donor.updates.last.date %> | <%= donor.updates.last.note %></p>
-        <% end %>
+    <% @volunteer.donors.each do |donor| %>
+      <div class="row">
+        <div class="col l6">
+          <h5><%= link_to donor.name, donor_path(donor) %></h5>
+          <p>Donation status: <%= DonationStatus.find(donor.donation_status_id).description %> </p>
+          <% if donor.updates.any? %>
+            <p><%= donor.updates.last.date %> | <%= donor.updates.last.note %></p>
+          <% end %>
+        </div>
+        <div class="col l6">
+          <span id="donor_update_link_<%= donor.id %>"><%= link_to "Add an update", new_donor_update_path(donor), :class => "waves-effect waves-light btn", remote: true %></span>
+        </div>
       </div>
-
-      <div class="col l6">
-        <span id="donor_update_link_<%= donor.id %>"><%= link_to "Add an update", new_donor_update_path(donor), :class => "waves-effect waves-light btn", remote: true %></span>
-      </div>
-    </div>
-    <hr>
-  <% end %>
+      <div class="divider"></div>
+      <br>
+    <% end %>
   <% end %>
 
   <% else %>

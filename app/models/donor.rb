@@ -17,4 +17,8 @@ class Donor < ActiveRecord::Base
     "#{self.address}, #{self.city}"
   end
 
+  def self.search(search)
+    where("name LIKE ?", "%#{search}%") 
+  end
+
 end

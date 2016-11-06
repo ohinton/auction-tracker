@@ -1,7 +1,12 @@
 class DonorsController < ApplicationController
 
   def index
-    @donors = Donor.all
+    @donors = Donor.all.order("name ASC")
+    if params[:search]
+      @donors = Donor.search(params[:search]).order("name ASC")
+    else
+      @donors = Donor.all.order("name ASC")
+    end
     @hash = Gmaps4rails.build_markers(@donors) do |donor, marker|
       marker.lat donor.latitude
       marker.lng donor.longitude
