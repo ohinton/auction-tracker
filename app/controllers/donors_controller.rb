@@ -56,6 +56,6 @@ class DonorsController < ApplicationController
 
   private
   def donor_params
-    params.require(:donor).permit(:name, :business_phone, :business_email, :address, :city, :state, :zip, :hours_am, :hours_pm, :contact_person, :contact_person_phone, :contact_person_email, :donation_request_link, :volunteer_id, :donation_status_id, day_ids:[])
+    params.require(:donor).permit(:name, :business_phone, :business_email, :address, :city, :state, :zip, :contact_person, :contact_person_phone, :contact_person_email, :donation_request_link, :volunteer_id, :donation_status_id, day_ids:[])
   end
 end

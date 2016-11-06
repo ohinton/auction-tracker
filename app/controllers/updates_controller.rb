@@ -9,16 +9,9 @@ class UpdatesController < ApplicationController
 
   def create
     @donor = Donor.find(params[:donor_id])
-    @update = @donor.updates.new(update_params)
-    if @update.save
-      flash[:notice] = "Update successfully added!"
-      respond_to do |format|
-        format.html { redirect_to volunteer_path }
-        format.js
-      end
-    else
-      render :new
-    end
+    @update = @donor.updates.create(update_params)
+    @volunteer = current_user.volunteer
+    redirect_to volunteer_path(@volunteer)
   end
 
   private

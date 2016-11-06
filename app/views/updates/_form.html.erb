@@ -1,6 +1,6 @@
 <%= render "layouts/errors", :object => @update %>
 
-<%= form_for [@donor, @update], remote: true, id:"new_update" do |f| %>
+<%= form_for [@donor, @update], id:"new_update" do |f| %>
 <%= f.hidden_field :donor_id, :value => @donor.id %>
   <div class="row">
     <div class="form-group col-md-4">
