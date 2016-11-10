@@ -1,8 +1,3 @@
-User.create! email: "volunteer@email.com", password: 'password', password_confirmation: 'password'
-
-User.create! email: "olivia@email.com", password: 'password', password_confirmation: 'password'
-
-
 donor_list = [
   ['The DragonTree Holistic Day Spa', '(503) 221-4123', 'info@dragontree.com', '2768 NW Thurman St', 'Portland', 'OR', '97210', 'Lily Smith', 'lily@dragontree.com', '(503) 682-7218', 'http://www.thedragontree.com/', 1, 1],
   ['Papa Hayden - East', '(503) 232-9440', 'east@papahaydn.com', '5829 SE Milwaukie Ave', 'Portland', 'OR', '97202', 'John Smith', 'john@papahaydn.com', '(503) 000-0000', 'http://www.papahaydn.com/papa-haydn-east/', 1, 1],
@@ -25,28 +20,4 @@ update_list = [
 
 update_list.each do |note, date, donor_id|
   Update.create(note: note, date: date, donor_id: donor_id)
-end
-
-day_list = [
-  'Monday',
-  'Tuesday',
-  'Wednesday',
-  'Thursday',
-  'Friday',
-  'Saturday',
-  'Sunday'
-]
-
-day_list.each do |name|
-  Day.create(name: name)
-end
-
-status_list = [
-  'Maybe',
-  'Yes',
-  'No'
-]
-
-status_list.each do |description|
-  DonationStatus.create(description: description)
 end
