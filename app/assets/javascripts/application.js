@@ -18,3 +18,5 @@
 //= require underscore
 //= require gmaps/google
 //= require turbolinks
+//= require jquery.ui.widget
+//= require z.jquery.fileupload
