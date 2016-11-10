@@ -8,11 +8,7 @@
         to track and collect donations for your charity auction.</h5>
       </div>
       <div class="row center">
-        <%if current_user%>
-        <%= link_to "Sign In", new_user_session_path, :class => "btn-lg" %>
-        <%else%>
         <%= link_to "Create A New Account", new_user_registration_path, :class => "btn-large waves-effect waves-light teal lighten-1", :id => "download-button" %>
-        <%end%>
       </div>
       <br><br>
     </div>
