@@ -30,6 +30,7 @@ group :development, :test do
   gem 'vcr'
   gem 'webmock'
   gem 'paperclip'
+  gem 'aws-sdk', '~> 2.3'
 end
 
 group :development do
