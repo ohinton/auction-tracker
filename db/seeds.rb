@@ -1,3 +1,7 @@
+User.create! email: "volunteer@email.com", password: 'password', password_confirmation: 'password'
+
+User.create! email: "olivia@email.com", password: 'password', password_confirmation: 'password'
+
 
 donor_list = [
   ['The DragonTree Holistic Day Spa', '(503) 221-4123', 'info@dragontree.com', '2768 NW Thurman St', 'Portland', 'OR', '97210', 'Lily Smith', 'lily@dragontree.com', '(503) 682-7218', 'http://www.thedragontree.com/', 1, 1],
