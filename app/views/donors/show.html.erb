@@ -32,7 +32,7 @@
     <% if @donor.updates.any? %>
     <ul>
       <% @donor.updates.each do |update| %>
-        <li><%= update.date %> | <%= update.note %> </li>
+        <li><%= update.date.strftime("%d/%m/%y") %>: <%= update.note %> </li>
       <% end %>
     </ul>
     <% end %>

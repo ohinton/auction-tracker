@@ -8,7 +8,7 @@
           <h5><%= link_to donor.name, donor_path(donor) %></h5>
           <p>Donation status: <%= DonationStatus.find(donor.donation_status_id).description %> </p>
           <% if donor.updates.any? %>
-            <p><%= donor.updates.last.date %> | <%= donor.updates.last.note %></p>
+            <p><%= donor.updates.last.date.strftime("%d/%m/%y") %>: <%= donor.updates.last.note %></p>
           <% end %>
         </div>
         <div class="col l6">
