@@ -14,7 +14,7 @@ describe "the add a donor process" do
     fill_in 'City', :with => 'Portland'
     fill_in 'State', :with => 'OR'
     fill_in 'Zip', :with => '97210'
-    click_on 'Update Volunteer'
+    click_on 'Update Profile'
     click_link 'Add a new donor'
     fill_in 'Name', :with => 'Test Name'
     fill_in 'Business phone', :with => '503-000-0000'

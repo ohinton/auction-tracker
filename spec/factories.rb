@@ -33,8 +33,6 @@ FactoryGirl.define do
     contact_person_phone '503-000-0000'
     contact_person_email 'test_contact@email.com'
     donation_request_link 'www.example.com'
-    hours_am 8
-    hours_pm 17
   end
 end
 

@@ -8,7 +8,7 @@ describe "the edit a volunteer process" do
     visit edit_user_registration_path(volunteer)
     click_link "edit"
     fill_in 'First name', :with => "New Name"
-    click_on 'Update Volunteer'
+    click_on 'Update Profile'
     expect(page).to have_content 'Your profile details were successfully updated!'
   end
 
