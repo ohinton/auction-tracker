@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col l6">
     <br>
-    <%= image_tag @user.volunteer.photo.url(:thumb) %>
+    <%= image_tag @user.volunteer.photo.url(:thumb).sub("//s3", "s3-us-west-2") %>
     <h4><%= @user.volunteer.first_name %> <%= @user.volunteer.last_name %></h4>
     <p><%= @user.volunteer.phone %></p>
     <p><%= @user.volunteer.address %></p>
