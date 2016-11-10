@@ -3,7 +3,7 @@ class DonorsController < ApplicationController
   def index
     @donors = Donor.all
     if params[:search]
-      @donors = Donor.search(params[:search])
+      @donors = Donor.search(params[:search].titlecase)
     else
       @donors = Donor.all
     end
