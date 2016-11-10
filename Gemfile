@@ -14,6 +14,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'geocoder'
 gem 'gmaps4rails'
+gem 'paperclip'
+gem 'aws-sdk', '~> 2.3'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -29,8 +31,6 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'vcr'
   gem 'webmock'
-  gem 'paperclip'
-  gem 'aws-sdk', '~> 2.3'
 end
 
 group :development do
