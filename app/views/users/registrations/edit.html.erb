@@ -5,7 +5,7 @@
     <h4><%= @user.volunteer.first_name %> <%= @user.volunteer.last_name %></h4>
     <p><%= @user.volunteer.phone %></p>
     <p><%= @user.volunteer.address %></p>
-    <p><%= @user.volunteer.city %>, <%= @user.volunteer.state %> <%= @user.volunteer.zip %> </p>
+    <p><%= @user.volunteer.city %> <%= @user.volunteer.state %> <%= @user.volunteer.zip %> </p>
 
     <span><%= link_to "edit", edit_volunteer_path(@user.volunteer), :class => "waves-effect waves-light btn" %></span>
   </div>

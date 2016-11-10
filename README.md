@@ -1,16 +1,15 @@
 # Auctionary
 
-#### By Olivia Hinton | September 2016
+#### By Olivia Hinton | Fall 2016
 
 ## Description
 
-Auctionary makes it easy for volunteers to gather and track in-kind donations for charity auctions. As a former fundraising auction coordinator, I experienced the difficulty that volunteers face when reaching out to donors and keeping track of their responses. The app also helps those leading a volunteer team with setting goals to keep the team engaged and tracking the overall progress. 
+Auctionary makes it easy for volunteers to gather and track donations for charity auctions. As a former fundraising auction coordinator, I experienced the difficulty that volunteers face when reaching out to donors and keeping track of their responses.
 
 Features include:
 * a database of your donors and volunteers, with the ability to assign a volunteer to a donor
-* an admin dashboard to see the current progress toward your fundraising goal
 * a dashboard so volunteers can see which donors they are responsible for contacting and record updates about donors
-* a Google Calendar to show goal deadlines, schedule volunteer committee meetings, invite volunteers to meetings and record responses to invites
+* a Google Map that shows where all donors are located
 
 ## General Setup Instructions
 

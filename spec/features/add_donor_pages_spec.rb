@@ -6,7 +6,7 @@ describe "the add a donor process" do
     FactoryGirl.create(:donation_status)
     login_as user
     visit volunteer_path(user)
-    click_link 'Please add your volunteer profile info'
+    click_link 'Please add your profile details'
     fill_in 'First name', :with => 'TestFirst'
     fill_in 'Last name', :with => 'TestLast'
     fill_in 'Phone', :with => '503-000-0000'
